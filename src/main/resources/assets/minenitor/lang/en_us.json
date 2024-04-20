@@ -4,5 +4,21 @@
   "block.minenitor.sapphire_block": "Sapphire Block",
   "block.minenitor.raw_sapphire_block": "Raw Sapphire Block",
 
+  "block.minenitor.sapphire_ore": "Sapphire Ore",
+  "block.minenitor.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.minenitor.nether_sapphire_ore": "Nether Sapphire Ore",
+  "block.minenitor.end_stone_sapphire_ore": "Endstone Sapphire Ore",
+
+  "item.minenitor.metal_detector": "Metal Detector",
+  "block.minenitor.sound_block": "Sound Block",
+
+  "item.minenitor.strawberry": "Strawberry",
+
+  "item.minenitor.pine_cone": "Pine Cone",
+
+
+  "tooltip.minenitor.metal_detector": "Find ores underground",
+  "tooltip.minenitor.sound_block": "Makes sound",
+
   "creativetab.minenitor_tab": "Minenitor Inventory"
 }
