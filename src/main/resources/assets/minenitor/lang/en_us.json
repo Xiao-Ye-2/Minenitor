@@ -13,9 +13,29 @@
   "block.minenitor.sound_block": "Sound Block",
 
   "item.minenitor.strawberry": "Strawberry",
-
+  "item.minenitor.sapphire_staff": "Sapphire Staff",
   "item.minenitor.pine_cone": "Pine Cone",
 
+  "block.minenitor.sapphire_stairs": "Sapphire Stairs",
+  "block.minenitor.sapphire_slab": "Sapphire Slab",
+  "block.minenitor.sapphire_button": "Sapphire Button",
+  "block.minenitor.sapphire_pressure_plate": "Sapphire Pressure Plate",
+  "block.minenitor.sapphire_fence": "Sapphire Fence",
+  "block.minenitor.sapphire_fence_gate": "Sapphire Fence Gate",
+  "block.minenitor.sapphire_wall": "Sapphire Wall",
+  "block.minenitor.sapphire_door": "Sapphire Door",
+  "block.minenitor.sapphire_trapdoor": "Sapphire Trapdoor",
+
+  "item.minenitor.sapphire_sword": "Sapphire Sword",
+  "item.minenitor.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.minenitor.sapphire_axe": "Sapphire Axe",
+  "item.minenitor.sapphire_hoe": "Sapphire Hoe",
+  "item.minenitor.sapphire_shovel": "Sapphire Shovel",
+
+  "item.minenitor.sapphire_helmet": "Sapphire Helmet",
+  "item.minenitor.sapphire_chestplate": "Sapphire Chestplate",
+  "item.minenitor.sapphire_leggings": "Sapphire Leggings",
+  "item.minenitor.sapphire_boots": "Sapphire Boots",
 
   "tooltip.minenitor.metal_detector": "Find ores underground",
   "tooltip.minenitor.sound_block": "Makes sound",
