@@ -1,5 +1,7 @@
 package net.joy.minenitormod.block.custom;
 
+import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.utils.TextHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -32,7 +34,7 @@ public class SoundBlock extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.translatable("tooltip.minenitor.sound_block"));
+        pTooltip.add(Component.translatable(TextHelper.tooltipKey(ModBlocks.SOUND_BLOCK)));
         super.appendHoverText(pStack, pLevel, pTooltip, pFlag);
     }
 }

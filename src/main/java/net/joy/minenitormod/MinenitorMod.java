@@ -3,6 +3,7 @@ package net.joy.minenitormod;
 import com.mojang.logging.LogUtils;
 import net.joy.minenitormod.block.ModBlocks;
 import net.joy.minenitormod.item.ModItems;
+import net.joy.minenitormod.loot.ModLootModifier;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,6 +33,8 @@ public class MinenitorMod
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModLootModifier.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

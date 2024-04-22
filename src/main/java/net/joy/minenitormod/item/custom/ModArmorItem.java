@@ -19,7 +19,7 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, ImmutableList<MobEffectInstance>> MATERIAL_MOB_EFFECT_INSTANCE_MAP =
             new ImmutableMap.Builder<ArmorMaterial, ImmutableList<MobEffectInstance>>()
                     .put(ModArmorMaterials.SAPPHIRE, ImmutableList.of(
-                            new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 1,
+                            new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 1,
                                     false, false, true),
                             new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1,
                                     false, false, true)

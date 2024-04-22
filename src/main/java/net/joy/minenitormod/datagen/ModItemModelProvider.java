@@ -48,6 +48,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleHandheld(ModItems.METAL_DETECTOR);
         simpleGenerated(ModItems.PINE_CONE);
         simpleGenerated(ModItems.STRAWBERRY);
+        simpleGenerated(ModItems.STRAWBERRY_SEEDS);
+
+        simpleGenerated(ModItems.CORN_SEEDS);
+        simpleGenerated(ModItems.CORN);
 
         simpleGenerated(ModBlocks.SAPPHIRE_DOOR);
 

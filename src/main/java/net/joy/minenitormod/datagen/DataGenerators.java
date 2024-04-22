@@ -1,6 +1,7 @@
 package net.joy.minenitormod.datagen;
 
 import net.joy.minenitormod.MinenitorMod;
+import net.joy.minenitormod.datagen.lang.ModLangProviderEN_US;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -23,6 +24,7 @@ public class DataGenerators {
         gen.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
         gen.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 
+        gen.addProvider(event.includeClient(), new ModLangProviderEN_US(packOutput));
         gen.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         gen.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
 
@@ -30,5 +32,7 @@ public class DataGenerators {
                 new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
         gen.addProvider(event.includeServer(),
                 new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+
+        gen.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput));
     }
 }

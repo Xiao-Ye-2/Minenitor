@@ -1,7 +1,9 @@
 package net.joy.minenitormod.item.custom;
 
 import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.item.ModItems;
 import net.joy.minenitormod.utils.ModTags;
+import net.joy.minenitormod.utils.TextHelper;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -54,7 +56,7 @@ public class MetalDetectorItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.minenitor.metal_detector"));
+        pTooltipComponents.add(Component.translatable(TextHelper.tooltipKey(ModItems.METAL_DETECTOR)));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 

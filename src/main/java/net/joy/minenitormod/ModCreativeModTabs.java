@@ -34,6 +34,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.SOUND_BLOCK.get());
 
                         pOutput.accept(ModItems.STRAWBERRY.get());
+                        pOutput.accept(ModItems.STRAWBERRY_SEEDS.get());
+
                         pOutput.accept(ModItems.SAPPHIRE_STAFF.get());
                         pOutput.accept(ModItems.PINE_CONE.get());
 
@@ -59,6 +61,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
                         pOutput.accept(ModItems.SAPPHIRE_LEGGINGS.get());
                         pOutput.accept(ModItems.SAPPHIRE_BOOTS.get());
+
+                        pOutput.accept(ModItems.CORN.get());
+                        pOutput.accept(ModItems.CORN_SEEDS.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {
