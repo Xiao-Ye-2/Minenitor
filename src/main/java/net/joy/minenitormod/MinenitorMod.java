@@ -2,8 +2,15 @@ package net.joy.minenitormod;
 
 import com.mojang.logging.LogUtils;
 import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.entity.ModEntities;
+import net.joy.minenitormod.entity.client.RhinoRenderer;
 import net.joy.minenitormod.item.ModItems;
 import net.joy.minenitormod.loot.ModLootModifier;
+import net.joy.minenitormod.sound.ModSounds;
+import net.joy.minenitormod.villager.ModVillagers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -33,6 +40,10 @@ public class MinenitorMod
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
+
+        ModSounds.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         ModLootModifier.register(modEventBus);
 
@@ -45,6 +56,9 @@ public class MinenitorMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CAT_MINT.getId(), ModBlocks.POTTED_CAT_MINT);
+        });
     }
 
     // Add the example block item to the building blocks tab
@@ -65,6 +79,7 @@ public class MinenitorMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
         }
     }
 }

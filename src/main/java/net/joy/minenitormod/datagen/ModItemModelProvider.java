@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.LinkedHashMap;
@@ -42,18 +43,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleGenerated(ModItems.SAPPHIRE);
-        simpleGenerated(ModItems.RAW_SAPPHIRE);
+        simpleGeneratedItem(ModItems.SAPPHIRE);
+        simpleGeneratedItem(ModItems.RAW_SAPPHIRE);
 
-        simpleHandheld(ModItems.METAL_DETECTOR);
-        simpleGenerated(ModItems.PINE_CONE);
-        simpleGenerated(ModItems.STRAWBERRY);
-        simpleGenerated(ModItems.STRAWBERRY_SEEDS);
+        simpleHandheldItem(ModItems.METAL_DETECTOR);
+        simpleGeneratedItem(ModItems.PINE_CONE);
+        simpleGeneratedItem(ModItems.STRAWBERRY);
+        simpleGeneratedItem(ModItems.STRAWBERRY_SEEDS);
 
-        simpleGenerated(ModItems.CORN_SEEDS);
-        simpleGenerated(ModItems.CORN);
+        simpleGeneratedItem(ModItems.CORN_SEEDS);
+        simpleGeneratedItem(ModItems.CORN);
 
-        simpleGenerated(ModBlocks.SAPPHIRE_DOOR);
+        simpleGeneratedItem(ModBlocks.SAPPHIRE_DOOR);
 
         fenceItem(ModBlocks.SAPPHIRE_FENCE, ModBlocks.SAPPHIRE_BLOCK);
         buttonItem(ModBlocks.SAPPHIRE_BUTTON, ModBlocks.SAPPHIRE_BLOCK);
@@ -66,42 +67,49 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simplestBlock(ModBlocks.SAPPHIRE_TRAP_DOOR, "_bottom");
 
-        simpleHandheld(ModItems.SAPPHIRE_SWORD);
-        simpleHandheld(ModItems.SAPPHIRE_PICKAXE);
-        simpleHandheld(ModItems.SAPPHIRE_SHOVEL);
-        simpleHandheld(ModItems.SAPPHIRE_HOE);
-        simpleHandheld(ModItems.SAPPHIRE_AXE);
+        simpleHandheldItem(ModItems.SAPPHIRE_SWORD);
+        simpleHandheldItem(ModItems.SAPPHIRE_PICKAXE);
+        simpleHandheldItem(ModItems.SAPPHIRE_SHOVEL);
+        simpleHandheldItem(ModItems.SAPPHIRE_HOE);
+        simpleHandheldItem(ModItems.SAPPHIRE_AXE);
 
         trimmedArmorItem(ModItems.SAPPHIRE_HELMET);
         trimmedArmorItem(ModItems.SAPPHIRE_CHESTPLATE);
         trimmedArmorItem(ModItems.SAPPHIRE_LEGGINGS);
         trimmedArmorItem(ModItems.SAPPHIRE_BOOTS);
+
+        withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        simpleGeneratedBlock(ModBlocks.CAT_MINT);
+        simpleGeneratedItem(ModItems.BAR_BRAWL_MUSIC_DISC);
     }
 
 
-    private <T extends FeatureElement> void simpleGenerated(RegistryObject<T> item) {
-        simple(item, "item/generated");
+    private <T extends FeatureElement> void simpleGeneratedItem(RegistryObject<T> item) {
+        simple(item, "item/generated", "item");
     }
 
-    private <T extends FeatureElement> void simpleHandheld(RegistryObject<T> item) {
-        simple(item, "item/handheld");
+    private <T extends FeatureElement> void simpleHandheldItem(RegistryObject<T> item) {
+        simple(item, "item/handheld", "item");
     }
 
-    private <T extends FeatureElement> void simple(RegistryObject<T> item, String type) {
+    private <T extends FeatureElement> void simpleGeneratedBlock(RegistryObject<T> item) {
+        simple(item, "item/generated", "block");
+    }
+
+    private <T extends FeatureElement> void simple(RegistryObject<T> item, String type, String path) {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation(type)).texture("layer0",
-                new ResourceLocation(MinenitorMod.MOD_ID, "item/" + item.getId().getPath()));
-    }
-
-    private void simplestBlock(RegistryObject<Block> item, String suffix) {
-        withExistingParent(item.getId().getPath(),
-                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(item.get()).getPath() + suffix));
+                new ResourceLocation(MinenitorMod.MOD_ID, path + "/" + item.getId().getPath()));
     }
 
     private void simplestBlock(RegistryObject<Block> item) {
         simplestBlock(item, "");
     }
 
+    private void simplestBlock(RegistryObject<Block> item, String suffix) {
+        withExistingParent(item.getId().getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(item.get()).getPath() + suffix));
+    }
 
     private void parentBlockItem(RegistryObject<Block> child, RegistryObject<Block> parent, String parentType, String texture) {
         withExistingParent(ForgeRegistries.BLOCKS.getKey(child.get()).getPath(), parentType)

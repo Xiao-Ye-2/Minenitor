@@ -2,11 +2,13 @@ package net.joy.minenitormod.item.custom;
 
 import net.joy.minenitormod.block.ModBlocks;
 import net.joy.minenitormod.item.ModItems;
+import net.joy.minenitormod.sound.ModSounds;
 import net.joy.minenitormod.utils.ModTags;
 import net.joy.minenitormod.utils.TextHelper;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -39,6 +41,9 @@ public class MetalDetectorItem extends Item {
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(pos.below(i), player, state.getBlock());
                     found = true;
+
+                    pContext.getLevel().playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(),
+                            ModSounds.METAL_DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1f, 1f, 0);
 
                     break;
                 }

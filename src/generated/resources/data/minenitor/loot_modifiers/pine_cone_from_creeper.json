@@ -1,0 +1,14 @@
+{
+  "type": "minenitor:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/creeper"
+    },
+    {
+      "chance": 0.5,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "minenitor:pine_cone"
+}

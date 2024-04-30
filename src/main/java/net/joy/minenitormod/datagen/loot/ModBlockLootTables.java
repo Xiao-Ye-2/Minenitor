@@ -67,6 +67,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(), ModItems.CORN_SEEDS.get(),
                         cropLootItemBuilderProvider(ModBlocks.CORN_CROP, CropBlock.AGE, 8)));
 
+        this.dropSelf(ModBlocks.CAT_MINT.get());
+        this.add(ModBlocks.POTTED_CAT_MINT.get(), createPotFlowerItemTable(ModBlocks.CAT_MINT.get()));
     }
 
     private static LootItemCondition.Builder cropLootItemBuilderProvider(RegistryObject<Block> block, Property<Integer> pProperty, int pValue) {

@@ -4,8 +4,10 @@ import net.joy.minenitormod.MinenitorMod;
 import net.joy.minenitormod.block.ModBlocks;
 import net.joy.minenitormod.item.ModItems;
 import net.joy.minenitormod.utils.TextHelper;
+import net.joy.minenitormod.villager.ModVillagers;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureElement;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
@@ -15,9 +17,9 @@ import org.w3c.dom.Text;
 
 import static net.joy.minenitormod.ModCreativeModTabs.MINENITOR_TAB;
 
-public class ModLangProviderEN_US extends LanguageProvider {
+public class ModLangProviderEN_US extends ModCustomLanguageProvider {
     public ModLangProviderEN_US(PackOutput output) {
-        super(output, MinenitorMod.MOD_ID, "en_us");
+        super(output,"en_us");
     }
 
     @Override
@@ -63,9 +65,16 @@ public class ModLangProviderEN_US extends LanguageProvider {
         add(ModItems.STRAWBERRY_SEEDS.get(), "Strawberry Seeds");
         add(ModItems.CORN_SEEDS.get(), "Corn Seeds");
         add(ModItems.CORN.get(), "Corn");
+        add(ModItems.RHINO_SPAWN_EGG.get(), "Rhino Spawn Egg");
 
+        add(ModBlocks.CAT_MINT.get(), "Cat Mint");
+
+        add(ModVillagers.SOUND_MASTER, "Sound Master");
+        add(MINENITOR_TAB.get(), "Minenitor Inventory");
+
+        add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
+        add(ModItems.BAR_BRAWL_MUSIC_DISC.get().getDescriptionId() + ".desc", "Bryan Tech - Bar Brawl (CC0)");
         add(TextHelper.tooltipKey(ModBlocks.SOUND_BLOCK), "Makes sound");
         add(TextHelper.tooltipKey(ModItems.METAL_DETECTOR), "Find ores underground");
-        add(MINENITOR_TAB.get().getDisplayName().getString(), "Minenitor Inventory");
     }
 }

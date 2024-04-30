@@ -54,6 +54,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCustomCrop((CustomCropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCustomCrop((CustomCropBlock) ModBlocks.CORN_CROP.get(), "corn_stage", "corn_stage");
+
+        simpleBlockWithItem(ModBlocks.CAT_MINT.get(), models().cross(blockTexture(ModBlocks.CAT_MINT.get()).getPath(),
+                blockTexture(ModBlocks.CAT_MINT.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_CAT_MINT.get(), models().singleTexture("potted_cat_mint",
+                        new ResourceLocation("flower_pot_cross"),"plant",
+                        blockTexture(ModBlocks.CAT_MINT.get())).renderType("cutout"));
     }
 
     private void makeCustomCrop(CustomCropBlock block, String modelName, String textureName) {

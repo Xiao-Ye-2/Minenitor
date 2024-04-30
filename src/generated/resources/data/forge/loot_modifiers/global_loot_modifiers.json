@@ -1,0 +1,9 @@
+{
+  "entries": [
+    "minenitor:pine_cone_from_grass",
+    "minenitor:pine_cone_from_creeper",
+    "minenitor:metal_detector_from_suspicious_sand",
+    "minenitor:metal_detector_from_jungle_temples"
+  ],
+  "replace": false
+}

@@ -2,12 +2,14 @@ package net.joy.minenitormod.item;
 
 import net.joy.minenitormod.MinenitorMod;
 import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.entity.ModEntities;
 import net.joy.minenitormod.item.custom.FuelItem;
 import net.joy.minenitormod.item.custom.MetalDetectorItem;
 import net.joy.minenitormod.item.custom.ModArmorItem;
+import net.joy.minenitormod.sound.ModSounds;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -60,7 +62,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
+            () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
 
+    public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5, new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -38,6 +38,7 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.SAPPHIRE_STAFF.get());
                         pOutput.accept(ModItems.PINE_CONE.get());
+                        pOutput.accept(ModBlocks.CAT_MINT.get());
 
                         pOutput.accept(ModBlocks.SAPPHIRE_STAIRS.get());
                         pOutput.accept(ModBlocks.SAPPHIRE_SLAB.get());
@@ -64,6 +65,9 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.CORN.get());
                         pOutput.accept(ModItems.CORN_SEEDS.get());
+                        pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
+                        pOutput.accept(ModItems.RHINO_SPAWN_EGG.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

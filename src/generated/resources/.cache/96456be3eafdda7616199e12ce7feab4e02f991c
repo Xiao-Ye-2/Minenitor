@@ -1,0 +1,6 @@
+// 1.20.1	2024-04-21T20:41:20.1352907	Global Loot Modifiers : minenitor
+93f35d2e438c6a4050112db0f3ab712077029056 data/forge/loot_modifiers/global_loot_modifiers.json
+35ed2b51d17c8725bda61f8d191781baa11f42b5 data/minenitor/loot_modifiers/metal_detector_from_jungle_temples.json
+4e4237d91ac4e1d9b443f7c5b1429d0488cbf843 data/minenitor/loot_modifiers/metal_detector_from_suspicious_sand.json
+d67b00518a71e618d499f9d75b32fc0dfb3b7e04 data/minenitor/loot_modifiers/pine_cone_from_creeper.json
+cc09e0d479f60a9939a17859bc46ffe93bab8acc data/minenitor/loot_modifiers/pine_cone_from_grass.json
