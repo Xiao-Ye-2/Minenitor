@@ -67,8 +67,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(), ModItems.CORN_SEEDS.get(),
                         cropLootItemBuilderProvider(ModBlocks.CORN_CROP, CropBlock.AGE, 8)));
 
+        this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
         this.dropSelf(ModBlocks.CAT_MINT.get());
         this.add(ModBlocks.POTTED_CAT_MINT.get(), createPotFlowerItemTable(ModBlocks.CAT_MINT.get()));
+
+        this.dropSelf(ModBlocks.PINE_LOG.get());
+        this.dropSelf(ModBlocks.PINE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_PINE_LOG.get());
+        this.dropSelf(ModBlocks.PINE_PLANKS.get());
+
+        this.add(ModBlocks.PINE_LEAVES.get(),
+                block -> createLeavesDrops(block, ModBlocks.PINE_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     private static LootItemCondition.Builder cropLootItemBuilderProvider(RegistryObject<Block> block, Property<Integer> pProperty, int pValue) {

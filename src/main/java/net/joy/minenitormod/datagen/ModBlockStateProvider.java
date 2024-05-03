@@ -11,7 +11,9 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
@@ -60,6 +62,35 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.POTTED_CAT_MINT.get(), models().singleTexture("potted_cat_mint",
                         new ResourceLocation("flower_pot_cross"),"plant",
                         blockTexture(ModBlocks.CAT_MINT.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
+
+        logBlock(((RotatedPillarBlock) ModBlocks.PINE_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.PINE_WOOD.get()), blockTexture(ModBlocks.PINE_LOG.get()), blockTexture(ModBlocks.PINE_LOG.get()));
+
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PINE_LOG.get()), blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()),
+                new ResourceLocation(MinenitorMod.MOD_ID, "block/stripped_pine_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_PINE_WOOD.get()), blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()), blockTexture(ModBlocks.STRIPPED_PINE_LOG.get()));
+
+        blockItem(ModBlocks.PINE_LOG);
+        blockItem(ModBlocks.PINE_WOOD);
+        blockItem(ModBlocks.STRIPPED_PINE_LOG);
+        blockItem(ModBlocks.STRIPPED_PINE_WOOD);
+
+        blockWithItem(ModBlocks.PINE_PLANKS);
+        leaveBlock(ModBlocks.PINE_LEAVES);
+
+    }
+
+    private void leaveBlock(RegistryObject<Block> block) {
+        simpleBlockWithItem(block.get(), models().singleTexture(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                new ResourceLocation("minecraft:block/leaves"), "all", blockTexture(block.get()))
+                .renderType("cutout"));
+    }
+    private void blockItem(RegistryObject<Block> block) {
+        simpleBlockItem(block.get(), new ModelFile.UncheckedModelFile(MinenitorMod.MOD_ID + ":block/" +
+                ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
     }
 
     private void makeCustomCrop(CustomCropBlock block, String modelName, String textureName) {

@@ -12,6 +12,7 @@ import net.minecraft.world.flag.FeatureElement;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 import org.w3c.dom.Text;
 
@@ -68,9 +69,17 @@ public class ModLangProviderEN_US extends ModCustomLanguageProvider {
         add(ModItems.RHINO_SPAWN_EGG.get(), "Rhino Spawn Egg");
 
         add(ModBlocks.CAT_MINT.get(), "Cat Mint");
+        add(ModBlocks.GEM_POLISHING_STATION.get(), "Gem Polishing Station");
 
         add(ModVillagers.SOUND_MASTER, "Sound Master");
         add(MINENITOR_TAB.get(), "Minenitor Inventory");
+
+        add(ModBlocks.PINE_LOG.get(), "Pine Log");
+        add(ModBlocks.PINE_WOOD.get(), "Pine Wood");
+        add(ModBlocks.STRIPPED_PINE_WOOD.get(), "Stripped Pine Wood");
+        add(ModBlocks.STRIPPED_PINE_LOG.get(), "Stripped Pine Log");
+        add(ModBlocks.PINE_PLANKS.get(), "Pine Planks");
+        add(ModBlocks.PINE_LEAVES.get(), "Pine Leaves");
 
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get().getDescriptionId() + ".desc", "Bryan Tech - Bar Brawl (CC0)");

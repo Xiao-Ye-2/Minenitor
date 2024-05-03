@@ -1,0 +1,12 @@
+{
+  "type": "minenitor:gem_polishing",
+  "ingredients": [
+    {
+      "item": "minenitor:raw_sapphire"
+    }
+  ],
+  "output": {
+    "count": 3,
+    "item": "minenitor:sapphire"
+  }
+}

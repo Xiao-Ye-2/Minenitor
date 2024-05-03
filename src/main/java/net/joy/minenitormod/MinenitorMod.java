@@ -2,12 +2,17 @@ package net.joy.minenitormod;
 
 import com.mojang.logging.LogUtils;
 import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.block.entity.ModBlockEntities;
 import net.joy.minenitormod.entity.ModEntities;
 import net.joy.minenitormod.entity.client.RhinoRenderer;
 import net.joy.minenitormod.item.ModItems;
 import net.joy.minenitormod.loot.ModLootModifier;
+import net.joy.minenitormod.recipe.ModRecipes;
+import net.joy.minenitormod.screen.GemPolishingStationScreen;
+import net.joy.minenitormod.screen.ModMenuType;
 import net.joy.minenitormod.sound.ModSounds;
 import net.joy.minenitormod.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -41,9 +46,12 @@ public class MinenitorMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
+        ModMenuType.register(modEventBus);
 
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         ModLootModifier.register(modEventBus);
 
@@ -80,6 +88,8 @@ public class MinenitorMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+
+            MenuScreens.register(ModMenuType.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }
