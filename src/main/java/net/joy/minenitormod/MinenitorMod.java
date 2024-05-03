@@ -14,6 +14,7 @@ import net.joy.minenitormod.sound.ModSounds;
 import net.joy.minenitormod.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
@@ -88,6 +89,8 @@ public class MinenitorMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+
+            EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
 
             MenuScreens.register(ModMenuType.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }

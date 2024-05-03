@@ -81,6 +81,8 @@ public class ModLangProviderEN_US extends ModCustomLanguageProvider {
         add(ModBlocks.PINE_PLANKS.get(), "Pine Planks");
         add(ModBlocks.PINE_LEAVES.get(), "Pine Leaves");
 
+        add(ModItems.DICE.get(), "Dice");
+
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get(), "Bar Brawl Music Disc");
         add(ModItems.BAR_BRAWL_MUSIC_DISC.get().getDescriptionId() + ".desc", "Bryan Tech - Bar Brawl (CC0)");
         add(TextHelper.tooltipKey(ModBlocks.SOUND_BLOCK), "Makes sound");

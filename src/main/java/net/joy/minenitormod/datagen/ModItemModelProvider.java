@@ -81,6 +81,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         simpleGeneratedBlock(ModBlocks.CAT_MINT);
         simpleGeneratedItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+
+        simpleGeneratedItem(ModItems.DICE);
     }
 
 

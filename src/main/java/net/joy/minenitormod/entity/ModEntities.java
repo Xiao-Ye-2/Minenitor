@@ -1,6 +1,7 @@
 package net.joy.minenitormod.entity;
 
 import net.joy.minenitormod.MinenitorMod;
+import net.joy.minenitormod.entity.custom.DiceProjectileEntity;
 import net.joy.minenitormod.entity.custom.RhinoEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -17,6 +18,10 @@ public class ModEntities {
             ENTITY_TYPES.register("rhino", () -> EntityType.Builder.of(RhinoEntity::new, MobCategory.CREATURE)
                     .sized(2.5f, 2.5f)
                     .build("rhino"));
+    public static final RegistryObject<EntityType<DiceProjectileEntity>> DICE_PROJECTILE =
+            ENTITY_TYPES.register("dice_projectile", () -> EntityType.Builder.<DiceProjectileEntity>of(DiceProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f)
+                    .build("dice_projectile"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

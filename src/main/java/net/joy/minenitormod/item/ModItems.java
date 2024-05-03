@@ -3,6 +3,7 @@ package net.joy.minenitormod.item;
 import net.joy.minenitormod.MinenitorMod;
 import net.joy.minenitormod.block.ModBlocks;
 import net.joy.minenitormod.entity.ModEntities;
+import net.joy.minenitormod.item.custom.DiceItem;
 import net.joy.minenitormod.item.custom.FuelItem;
 import net.joy.minenitormod.item.custom.MetalDetectorItem;
 import net.joy.minenitormod.item.custom.ModArmorItem;
@@ -67,6 +68,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS.register("rhino_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5, new Item.Properties()));
+
+    public static final RegistryObject<Item> DICE = ITEMS.register("dice",
+            () -> new DiceItem(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
