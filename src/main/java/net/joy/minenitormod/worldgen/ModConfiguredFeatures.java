@@ -2,6 +2,7 @@ package net.joy.minenitormod.worldgen;
 
 import net.joy.minenitormod.MinenitorMod;
 import net.joy.minenitormod.block.ModBlocks;
+import net.joy.minenitormod.worldgen.tree.placer.PineFoliagePlacer;
 import net.joy.minenitormod.worldgen.tree.placer.PineTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -56,7 +57,7 @@ public class ModConfiguredFeatures {
                 new PineTrunkPlacer(5, 4, 3),
 
                 BlockStateProvider.simple(ModBlocks.PINE_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new PineFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 

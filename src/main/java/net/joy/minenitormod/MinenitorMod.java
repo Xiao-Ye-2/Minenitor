@@ -12,6 +12,7 @@ import net.joy.minenitormod.screen.GemPolishingStationScreen;
 import net.joy.minenitormod.screen.ModMenuType;
 import net.joy.minenitormod.sound.ModSounds;
 import net.joy.minenitormod.villager.ModVillagers;
+import net.joy.minenitormod.worldgen.tree.ModFoliagePlacerTypes;
 import net.joy.minenitormod.worldgen.tree.ModTrunkPlacerTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -52,6 +53,7 @@ public class MinenitorMod
         ModMenuType.register(modEventBus);
 
         ModTrunkPlacerTypes.register(modEventBus);
+//        ModFoliagePlacerTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
