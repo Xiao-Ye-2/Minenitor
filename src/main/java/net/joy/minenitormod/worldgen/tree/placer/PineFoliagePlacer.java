@@ -28,9 +28,11 @@ public class PineFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeTreeHeight, FoliageAttachment pAttachment, int pFoliageHeight, int pFoliageRadius, int pOffset) {
-        System.out.println(pMaxFreeTreeHeight);
-        System.out.println(pFoliageHeight);
-        System.out.println(pOffset);
+        System.out.println(pFoliageRadius);
+        for (int i = 0; i < pMaxFreeTreeHeight + pFoliageHeight + pOffset; ++i) {
+            int radius = i / 2;
+            this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachment.pos(), radius + 1, -i, pAttachment.doubleTrunk());
+        }
     }
 
     @Override

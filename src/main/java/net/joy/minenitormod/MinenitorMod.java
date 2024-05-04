@@ -53,7 +53,7 @@ public class MinenitorMod
         ModMenuType.register(modEventBus);
 
         ModTrunkPlacerTypes.register(modEventBus);
-//        ModFoliagePlacerTypes.register(modEventBus);
+        ModFoliagePlacerTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
         ModEntities.register(modEventBus);
