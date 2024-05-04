@@ -83,8 +83,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleGeneratedItem(ModItems.BAR_BRAWL_MUSIC_DISC);
 
         simpleGeneratedItem(ModItems.DICE);
+        saplingItem(ModBlocks.PINE_SAPLING);
     }
 
+    private <T extends FeatureElement> void saplingItem(RegistryObject<T> item) {
+        withExistingParent(item.getId().getPath(),
+               new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MinenitorMod.MOD_ID, "block/" + item.getId().getPath()));
+    }
 
     private <T extends FeatureElement> void simpleGeneratedItem(RegistryObject<T> item) {
         simple(item, "item/generated", "item");

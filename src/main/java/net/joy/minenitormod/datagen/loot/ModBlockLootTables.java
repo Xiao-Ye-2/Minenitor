@@ -77,8 +77,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.STRIPPED_PINE_LOG.get());
         this.dropSelf(ModBlocks.PINE_PLANKS.get());
 
+        this.dropSelf(ModBlocks.PINE_SAPLING.get());
         this.add(ModBlocks.PINE_LEAVES.get(),
-                block -> createLeavesDrops(block, ModBlocks.PINE_LEAVES.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+                block -> createLeavesDrops(block, ModBlocks.PINE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     private static LootItemCondition.Builder cropLootItemBuilderProvider(RegistryObject<Block> block, Property<Integer> pProperty, int pValue) {

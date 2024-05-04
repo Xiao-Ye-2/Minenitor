@@ -35,5 +35,7 @@ public class DataGenerators {
 
         gen.addProvider(event.includeServer(), new ModGlobalLootModifierProvider(packOutput));
         gen.addProvider(event.includeServer(), new ModPoiTypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
+
+        gen.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }

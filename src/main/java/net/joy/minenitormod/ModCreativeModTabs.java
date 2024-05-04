@@ -78,6 +78,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.PINE_LEAVES.get());
 
                         pOutput.accept(ModItems.DICE.get());
+                        pOutput.accept(ModBlocks.PINE_SAPLING.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {

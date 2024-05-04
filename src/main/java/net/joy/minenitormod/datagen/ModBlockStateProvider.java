@@ -80,6 +80,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.PINE_PLANKS);
         leaveBlock(ModBlocks.PINE_LEAVES);
+        saplingBlock(ModBlocks.PINE_SAPLING);
+
+    }
+
+    private void saplingBlock(RegistryObject<Block> saplingBlock) {
+        simpleBlock(saplingBlock.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(saplingBlock.get()).getPath(),
+                        blockTexture(saplingBlock.get())).renderType("cutout"));
 
     }
 
